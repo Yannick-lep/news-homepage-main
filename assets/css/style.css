@@ -17,39 +17,26 @@
     margin: 0;
     box-sizing: border-box;
 }
-img,
-input {
-    vertical-align: bottom;
-}
-
-ul {
-    list-style-type: none;
-}
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 500;
-    text-transform: uppercase;
+body {
+    font-family: 'Inter' sans-serif;
+    background-color: var(--off-white);
+    color: var(--very-dark-blue);
+    font-size: 15px;
+    line-height: 1.6;
+   /* max-width: 375px;*/
+    margin: 0 auto;
 }
 
 #menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 4rem;
+    margin: 1.5rem;
 }
-
-#menu #openmenu {
-    display: none;
-}
-
 #menu ul {
     display: none;
+    list-style-type: none;
+    font-size: 15px;
     color: var(--grayish-blue);
 
 }
@@ -66,8 +53,228 @@ h6 {
 #menu #openmenu:checked~label>img {
     content: url("../images/icon-menu-close.svg");
 }
-.hero-image {
+
+.logo {
+    width: 50px;
+}
+
+#menu #openmenu {
+    display: none;
+}
+.burger {
+    width: 30px;
+    cursor: pointer;
+}
+.hero {
+    padding: 0 1.5rem;
+}
+.hero-image img {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+.hero h1 {
+    font-family: 'Inter';
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+.hero p {
+    color: var(--dark-grayish-blue);
+    margin-bottom: 1.5rem;
+    font-family: 'Inter';
+    font-weight: 400;
+}
+.hero button {
+    font-family: 'Inter';
+    background-color: var(--softred);
+    color: var(--off-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    border: none;
+    padding: 1.5rem 1.5rem;
+    gap: 1.5rem;
+    border: 0;
+    cursor: pointer;
+}
+
+.new {
+    font-family: 'Inter';
+    background-color: var(--very-dark-blue);
+    color: var(--off-white);
+    margin: 3rem 2rem;
+    padding: 1.5rem;
+   
+}
+
+.new h2 {
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--softorange);
+}
+.new h3 {
+    font: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.new p {
+    color: var(--grayish-blue);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+.new hr {
+    border: 0;
+    border-top: 1px solid var(--dark-grayish-blue);
+    margin: 1rem 0;
+}
+.container {
     display: flex;
-    justify-content: center;
-    width: 98%;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 550px;
+    background-color: var(--off-white);
+    padding: 1.5rem;
+}
+.item { 
+    display: flex;
+    align-items: center;
+    font-family: 'Inter';
+    gap: 1rem;
+}
+.card-imgage img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.card .numero {
+    color: var(--grayish-blue);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-left: 1.5rem;
+
+}
+.card h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    margin: 0.2rem 0;
+    margin-left: 1.5rem;
+}
+.card p {
+    color: var(--dark-grayish-blue);
+    font-size: 0.9rem;
+    margin-left: 1.5rem;
+    
+}
+ @media screen and (min-width:1024px) {
+    body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  /* Header */
+  #menu {
+    margin: 0;
+    padding: 2rem 0;
+  }
+
+  /* Cacher le menu burger sur desktop */
+  #menu label,
+  #menu #openmenu {
+    display: none;
+  }
+
+  /* Afficher la nav horizontale */
+  #menu ul {
+    display: flex;
+    gap: 2rem;
+    color: var(--dark-grayish-blue);
+  }
+
+  #menu ul li {
+    display: flex;
+    cursor: pointer;
+  }
+
+  #menu ul li:hover {
+    color: var(--softred);
+  }
+
+  /* ---- HERO + NEW ---- */
+  main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    padding: 0 2rem;
+  }
+
+  .hero {
+    padding: 0;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+
+  .hero-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .hero p {
+    flex: 1;
+    font-size: 1rem;
+    color: var(--dark-grayish-blue);
+  }
+
+  .hero button {
+    padding: 1rem 2rem;
+  }
+
+  /* ---- NEW SECTION ---- */
+  .new {
+    margin: 0;
+    height: fit-content;
+  }
+
+  .new h2 {
+    font-size: 2rem;
+  }
+
+  /* ---- BOTTOM CARDS ---- */
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 2rem;
+    padding: 0 2rem;
+    margin-top: 3rem;
+  }
+
+  .item {
+    flex: 1;
+  }
+
+  .card-image img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
 }
